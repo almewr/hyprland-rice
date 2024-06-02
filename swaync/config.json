@@ -60,15 +60,15 @@
             "actions": [
                 {
                     "label": "",
-                    "command": "bash  /home/almor/.scripts/power.sh"
+                    "command": "bash  $HOME/.scripts/power.sh"
                 },
                 {
                     "label": "",
-                    "command": "bash  /home/almor/.scripts/record.sh"
+                    "command": "bash  $HOME/.scripts/record.sh"
                 },
                 {
                     "label": "",
-                    "command": "bash  /home/almor/.scripts/emoji.sh"
+                    "command": "bash  $HOME/.scripts/emoji.sh"
                 },
                 {
                     "label": "📋",
@@ -80,7 +80,7 @@
                 },
                 {
                     "label": "",
-                    "command": "bash /home/almor/.scripts/ssc.sh"
+                    "command": "bash $HOME/.scripts/ssc.sh"
                 }
             ]
         }
