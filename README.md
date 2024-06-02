@@ -9,11 +9,11 @@ also, i stole most of the config files and stuff from various #sources :3
 
 here's a screenshot:
 
-<img src="https://github.com/almewr/hyprland-rice/screenshot.png"/>
+<img src="https://github.com/almewr/hyprland-rice/blob/main/hackerman.png"/>
 
 here's another screenshot (cringe alert):
 
-<img src="https://github.com/almewr/hyprland-rice/hackerman.png"/>
+<img src="https://github.com/almewr/hyprland-rice/blob/main/hackerman.png"/>
 
 
 # sources
