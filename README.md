@@ -5,7 +5,7 @@ swaync is not exactly "riced" but i made it look a bit cooler :)
 
 I thought about it for a bit and now I'm conflicted on whether or not I should call it a rice lol
 either way, it (kinda) works for me.
-also, i stole most of the config files and stuff from various #sources :3
+also, i stole most of the config files and stuff from various [#sources](https://github.com/almewr/hyprland-rice/blob/main/hackerman.png) :3
 
 here's a screenshot:
 
