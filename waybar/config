@@ -1,0 +1,122 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 20,
+    "width": 1355,
+    "margin": "3, 0, 2, 0",
+    "modules-left": ["custom/notification", "custom/recorder", "cpu", "memory", "disk"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["tray", "network", "pulseaudio", "clock"],
+
+
+    "hyprland/workspaces": {
+        "sort-by-name": true,
+        "on-click": "activate",
+        "on-scroll-up": "exec hyprctl dispatch workspace e-1",
+        "on-scroll-down": "exec hyprctl dispatch workspace e+1",
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": "",
+            "inhibited-notification": "",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none": "",
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+
+    "clock": {
+        "interval": 1,
+        "locale": "C",
+        "format": "{:%I:%M %p}",
+        "format-alt": " {:%a,%b %d}", // Icon: calendar-alt
+        "on-click-right": "exec gnome-calendar",
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": " {usage}%",
+        "max-length": 10,
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": " {used:0.2f}GB",
+
+        "max-length": 10,
+        "tooltip": false,
+        "warning": 70,
+        "critical": 90,
+        "on-click": "exec gnome-system-monitor",
+    },
+
+    "network": {
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-wifi": "{icon} ({signalStrength}%)",
+        "format-icons": {
+            "wifi": ["睊", "直" ,""],
+            "ethernet": [""],
+            "disconnected": ["⏾"]
+        },
+        "on-click": "kitty nmtui",
+        "tooltip-format": "{ipaddr}",
+    },
+
+
+    "pulseaudio": {
+      // "scroll-step": 1, // %, can be a float
+      "format": "{icon} {volume}% {format_source}",
+      "format-bluetooth": "{icon} {volume}% {format_source}",
+      "format-bluetooth-muted": " {format_source}",
+      "format-muted": "  {format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "🎧",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol",
+      "on-click-right": "pamixer -t",
+      "on-scroll-up": "pamixer -i 1 --allow-boost --set-limit 150",
+      "on-scroll-down": "pamixer -d 1 --allow-boost",
+    },
+
+    "tray": {
+        "icon-size": 17
+    },
+
+    "disk": {
+        "format": " {free}",
+        "on-click-right": "exec baobab"
+    },
+
+
+      "custom/recorder": {
+          "format": "<span foreground='red'><sup></sup></span>",
+	  "format-disabled": "",
+	  "return-type": "json",
+	  "interval": 1,
+	  "exec": "echo '{\"class\": \"recording\"}'",
+	  "exec-if": "pgrep wf-recorder",
+      },
+}
